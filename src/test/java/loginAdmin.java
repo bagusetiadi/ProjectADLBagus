@@ -27,7 +27,7 @@ public class loginAdmin {
         driver.findElement(By.xpath("//input[@formcontrolname='userId'][@ng-reflect-name='userId']")).sendKeys("adli.lantai3@gmail.com");
         driver.findElement(By.xpath("//input[@ng-reflect-name='pass'][@id='pass']")).sendKeys("12345678");
         driver.findElement(By.xpath("//button[@class='px-4 btn btn-primary btn-primary-xl btn btn-block button-login']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@class='login-head']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@ng-reflect-router-link='/campaign-management']")));
         Thread.sleep(5000);
     }
 
