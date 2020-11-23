@@ -1,12 +1,16 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class loginUser {
     WebDriver driver;
@@ -27,7 +31,8 @@ public class loginUser {
         driver.findElement(By.xpath("//input[@formcontrolname='userId'][@ng-reflect-name='userId']")).sendKeys("adli.lantai3.02@gmail.com");
         driver.findElement(By.xpath("//input[@ng-reflect-name='pass'][@id='pass']")).sendKeys("P@ssw0rd");
         driver.findElement(By.xpath("//button[@class='px-4 btn btn-primary btn-primary-xl btn btn-block button-login']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@ng-reflect-router-link='/my-profile']")));
+        List<WebElement> elements = driver.findElements(By.xpath("//a[@ng-reflect-router-link='/campaign-management']"));
+        Assert.assertTrue(true);
         Thread.sleep(5000);
     }
 
