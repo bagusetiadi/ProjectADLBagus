@@ -31,8 +31,8 @@ public class loginUser {
         driver.findElement(By.xpath("//input[@formcontrolname='userId'][@ng-reflect-name='userId']")).sendKeys("adli.lantai3.02@gmail.com");
         driver.findElement(By.xpath("//input[@ng-reflect-name='pass'][@id='pass']")).sendKeys("P@ssw0rd");
         driver.findElement(By.xpath("//button[@class='px-4 btn btn-primary btn-primary-xl btn btn-block button-login']")).click();
-        List<WebElement> elements = driver.findElements(By.xpath("//a[@ng-reflect-router-link='/campaign-management']"));
-        Assert.assertTrue(true);
+        List<WebElement> adminMenu = driver.findElements(By.xpath("//a[@ng-reflect-router-link='/']"));
+        Assert.assertTrue(adminMenu.isEmpty());
         Thread.sleep(5000);
     }
 
